@@ -29,7 +29,7 @@
       suppress_sudden_obstacle_stop: true
 
       stop_obstacle_type:
-        pointcloud: false
+        pointcloud: true
         inside:
           unknown: true
           car: true
@@ -80,7 +80,7 @@
         motorcycle: true
         bicycle: true
         pedestrian: true
-        pointcloud: false
+        pointcloud: true
 
     behavior_determination:
       pointcloud_search_radius: 5.0
