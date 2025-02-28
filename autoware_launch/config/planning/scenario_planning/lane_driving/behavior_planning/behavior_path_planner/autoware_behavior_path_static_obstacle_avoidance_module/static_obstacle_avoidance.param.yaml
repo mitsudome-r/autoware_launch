@@ -122,8 +122,8 @@
           motorcycle: true                              # [-]
           pedestrian: true                              # [-]
         # detection range
-        object_check_goal_distance: 20.0                # [m]
-        object_check_return_pose_distance: 20.0         # [m]
+        object_check_goal_distance: 2.0                # [m]
+        object_check_return_pose_distance: 2.0         # [m]
         # lost object compensation
         max_compensation_time: 2.0
 
@@ -150,9 +150,9 @@
           # "auto"   : generate candidate path. if RTC is running as AUTO mode, the ego avoids it automatically.
           # "manual" : generate candidate path and wait operator approval even if RTC is running as AUTO mode.
           # "ignore" : never avoid it.
-          policy: "manual"                              # [-]
+          policy: "auto"                              # [-]
           condition:
-            th_stopped_time: 3.0                        # [s]
+            th_stopped_time: 1.0                        # [s]
             th_moving_distance: 1.0                     # [m]
           ignore_area:
             traffic_light:
@@ -243,7 +243,7 @@
         return_dead_line:
           goal:
             enable: true                                # [-]
-            buffer: 3.0                                 # [m]
+            buffer: 1.0                                 # [m]
           traffic_light:
             enable: true                                # [-]
             buffer: 3.0                                 # [m]
@@ -329,9 +329,9 @@
       debug:
         enable_other_objects_marker: true
         enable_other_objects_info: true
-        enable_detection_area_marker: false
-        enable_drivable_bound_marker: false
-        enable_safety_check_marker: false
-        enable_shift_line_marker: false
-        enable_lane_marker: false
-        enable_misc_marker: false
+        enable_detection_area_marker: true
+        enable_drivable_bound_marker: true
+        enable_safety_check_marker: true
+        enable_shift_line_marker: true
+        enable_lane_marker: true
+        enable_misc_marker: true
