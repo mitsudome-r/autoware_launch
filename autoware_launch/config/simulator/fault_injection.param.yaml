@@ -7,7 +7,7 @@
       localization_accuracy_is_low: "localization_error_ellipse"
       map_version_is_different: "map_version"
       trajectory_is_invalid: "trajectory_point_validation"
-      cpu_temperature_is_high: "CPU Temperature"
+      cpu_temperature_is_high: "cpu_temperature_is_high: cpu_temperature_is_high"
       cpu_usage_is_high: "CPU Usage"
       cpu_is_in_thermal_throttling: "CPU Thermal Throttling"
       storage_temperature_is_high: "HDD Temperature"
