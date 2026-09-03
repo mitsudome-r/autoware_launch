@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<?xml-model href="http://download.ros.org/schema/package_format3.xsd" schematypens="http://www.w3.org/2001/XMLSchema"?>
+<package format="3">
+  <name>carla_hgv_sensor_kit_launch</name>
+  <version>0.52.0</version>
+  <description>Launch files for the CARLA European HGV sensor kit (wraps carla_sensor_kit_launch)</description>
+  <maintainer email="noreply@example.com">Autoware Maintainer</maintainer>
+  <license>Apache License 2.0</license>
+
+  <buildtool_depend>ament_cmake_auto</buildtool_depend>
+
+  <depend>carla_hgv_sensor_kit_description</depend>
+  <depend>carla_sensor_kit_launch</depend>
+
+  <export>
+    <build_type>ament_cmake</build_type>
+  </export>
+</package>

@@ -1,0 +1,90 @@
+# CARLA sensor kit calibration for the European HGV truck (vehicle.carlamotors.european_hgv)
+#
+# Frames: base_link (x forward, y right, z up), same conventions as carla_sensor_kit.
+# autoware_carla_interface converts base_link -> CARLA vehicle origin with the default
+# wheelbase (2.850 m), so the same offset is applied here for consistency:
+#   x_base = x_car_center + 1.425
+#   y_base = y_car_center
+#   z_base = z_car_center
+#
+# Truck dimensions measured in CARLA (bounding box, relative to the vehicle origin):
+#   half length 3.97 m (front face at x = +3.97), half width 1.45 m, roof at z = 3.46 m.
+# The Prius values (x = +0.8, z = 1.6) sit inside the cab, so the cameras are moved to
+# the front face of the cab at windshield height, and the LiDAR onto the cab roof.
+
+sensor_kit_base_link:
+  # Cameras (6 cams, 360°)
+  CAM_FRONT/camera_link:
+    x: 5.275 # 3.850 + 1.425 (front face of the cab)
+    y: 0.000
+    z: 2.700 # windshield top
+    roll: 0.000
+    pitch: 0.000
+    yaw: 0.000
+
+  CAM_FRONT_LEFT/camera_link:
+    x: 5.025 # 3.600 + 1.425
+    y: -1.250
+    z: 2.700
+    roll: 0.000
+    pitch: 0.000
+    yaw: -0.959931 # -55 deg
+
+  CAM_FRONT_RIGHT/camera_link:
+    x: 5.025 # 3.600 + 1.425
+    y: 1.250
+    z: 2.700
+    roll: 0.000
+    pitch: 0.000
+    yaw: 0.959931 # +55 deg
+
+  CAM_BACK/camera_link:
+    x: -2.525 # -3.950 + 1.425 (rear end of the tractor)
+    y: 0.000
+    z: 2.700
+    roll: 0.000
+    pitch: 0.000
+    yaw: 3.141593 # 180 deg
+
+  CAM_BACK_LEFT/camera_link:
+    x: 2.425 # 1.000 + 1.425 (rear edge of the cab)
+    y: -1.450
+    z: 2.700
+    roll: 0.000
+    pitch: 0.000
+    yaw: -1.919862 # -110 deg
+
+  CAM_BACK_RIGHT/camera_link:
+    x: 2.425 # 1.000 + 1.425
+    y: 1.450
+    z: 2.700
+    roll: 0.000
+    pitch: 0.000
+    yaw: 1.919862 # +110 deg
+
+  # LiDAR (cab roof)
+  velodyne_top_base_link:
+    x: 3.925 # 2.500 + 1.425
+    y: 0.000
+    z: 3.600 # roof (3.46 m) + mount
+    roll: 0.000
+    pitch: 0.000
+    yaw: 0.000
+
+  # GNSS (unchanged from carla_sensor_kit)
+  gnss_link:
+    x: 0.025 # -1.400 + 1.425
+    y: 0.000
+    z: 0.000
+    roll: 0.000
+    pitch: 0.000
+    yaw: 0.000
+
+  # IMU (unchanged from carla_sensor_kit)
+  tamagawa/imu_link:
+    x: 0.025 # -1.400 + 1.425
+    y: 0.000
+    z: 0.000
+    roll: 0.000
+    pitch: 0.000
+    yaw: 0.000
